@@ -1,23 +1,123 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP3</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ 
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+  
+  
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+      <!-- Javascript -->
+   <script>
+         $(function() {
+            $( "#DateDeNaissance" ).datepicker();
+         });
+    </script>
+  
+  
+  
+</head>
+<body>
+
+<div class="container">
+  <h1>TP APW - Formulaire v2</h1>
+  <p>Avec Bootstrap & jQuery</p>
+  
+ 
+ <form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Nom">Nom:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Nom" placeholder="Entrer votre nom">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Prenom">Prenom:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Prenom" placeholder="Entrer votre prenom">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Nom">Date de naissance:</label>
+    <div class="col-sm-10">
+      <input type="datetime" class="form-control" id="DateDeNaissance" placeholder="Entrer votre date de naissance : JJ/MM/AAAA">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Adresse">Adresse:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Adresse" placeholder="Entrer votre adresse">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Mail">Mail:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="Mail" placeholder="Entrer votre email">
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" id="valider" class="btn btn-default">Valider</button>
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+  <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Message erreur</h4>
+      </div>
+      <div class="modal-body">
+        <p>Veuillez remplir tous les champs svp </p>
+		
+      </div>
+    </div>
+	  </div>
+</div>
+
+<!-- Modal content-->  <!-- Partie map-->
+
+  <div id="ModalMaps" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+		  <div class="modal-content">
+      <div class="modal-header">
         
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>tp3</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+		 <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+		</div>
+		
+      <div class="modal-body">
+        <p>Vous êtes nés le 01/01/2001 </p>
+		
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</form>
+  
+  
+</div>
+
+</body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src = "formulaire.js" > </script>
+  
 </html>
