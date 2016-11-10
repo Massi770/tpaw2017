@@ -1,23 +1,187 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP4</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="fr">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+  
+    <title>TP 4 App Web </title>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/style.css" rel="stylesheet">
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+ 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#date" ).datepicker({
+
+    	dateFormat:"dd-mm-yy",
+			   maxDate: "-1d"
+    });
+  } );
+  </script>
+
+  <script>
+  /*$( function() {
+    $( "#date" ).datepicker();
+  } );*/
+  </script>
+
+</head><!--/head-->
+
+<body class="homepage">
+
+
+    <header id="header">
+       
+		
+    </header><!--/header-->
+
+    <section class="body">
+    <div class="container">
+    	<div class="row head">
+    		<div class="col-sm-4">
+      			
+      		</div>
+      		<div class="col-sm-8">
+      			<h1 id="title_h1">
+      				TP 4 
+      			</h1>
+      			<h2 id ="title_h2">
+      				Formulaire
+      			</h2>
+      		</div>
+     	</div>
+     
+    	<div class="row information">
+    		<div class="col-sm-12">
+
+    			<h1> Saisie d'une fiche Personnnelle</h1>	
+    			<div class="Formulaire col-sm-6">
+    			<from method="" action="">
+ 					<div class="form-group">
+  						<label for="usr">Nom :</label>
+						  <div class="input-group">
+  						<input type="text" class="form-control" id="nom">
+						  <span class="input-group-addon" id="basic-nom"></span>
+						  </div>
+					</div>
+					<div class="form-group">
+						
+  						<label for="pwd">Prénom :</label>
+						   <div class="input-group">
+  						<input type="text" class="form-control" id="prenom">
+						  <span class="input-group-addon" id="basic-prenom"></span>
+						   </div>
+					</div>
+					<div class="form-group">
+						 
+  						<label for="pwd">Date de naissance :</label>
+						  <div class="input-group">
+  						<input type="text" class="form-control" id="date">
+						   <span class="input-group-addon" id="basic-dateNaissance"></span>
+						   </div>
+					</div>
+					<div class="form-group form-inline">
+						
+  						<label for="pwd">Adresse :</label>
+						  <div class="input-group" id="adresse">
+  						<input type="text" class="form-control" id="adresseT">
+						   <span class="input-group-addon" id="basic-geo"></span>
+               <button type="button" class="btn btn-info" onclick="getLocation()">GPS</button>
+                
+						   </div>
+               <div class="alert alert-success" id="valide" style="display: none;" role="alert">
+             
+               </div>
+						
+						<div id="mapholder"></div>
+					</div>
+					<div class="form-group">
+						
+  						<label for="pwd">Mail :</label>
+						  <div class="input-group">
+  						<input type="email" class="form-control" id="mail">
+						   <span class="input-group-addon" id="basic-mail"></span>
+						   </div>
+					</div>
+
+  					<div class="form-group">
+            <div class="col-sm-4">
+  					<input type="submit" class="btn btn-primary" value="valider" id="valider"/>
+            </div>
+            <div class="col-sm-8">
+          <div class="alert alert-success" id="valideT" style="display: none;" role="alert">
+              <p> <strong>Le formulaire est enregistré avec succès ! </strong> </p>
+         </div>
+        </div>
+					</div>
+
+				</from>
         
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>TP4</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+				</div>
+				<div class="col-sm-12">
+					<div class="modal fade" tabindex="-1" id="modalE" role="dialog">
+ 						 <div class="modal-dialog" role="document">
+  							  <div class="modal-content">
+									<div class="modal-header">
+    								    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      										  <h4 class="modal-title">Modal title</h4>
+     								</div>
+      								<div class="modal-body">
+      								  <p>Veuillez remplir tous les champs svp</p>
+  								    </div>
+  							    <div class="modal-footer">
+       								 <button type="button" class="btn btn-success" data-dismiss="modal">Ressayer ! </button>
+     							 
+     							 </div>
+  						  </div><!-- /.modal-content -->
+ 					 </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				<div class="modal fade" tabindex="-1" id ="modalS" role="dialog">
+ 						 <div class="modal-dialog" role="document">
+  							  <div class="modal-content">
+									<div class="modal-header">
+    								    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      										  <h4 class="message"></h4>
+     								</div>
+      								<div class="modal-body messageS" id="contenu">
+      								 
+      								 
+  								    </div>
+  							  			  <div class="modal-footer">
+       								 <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+     							 
+     							 </div>
+  						  </div><!-- /.modal-content -->
+ 					 </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				
+				</div>
+				
+				
+
+    		</div>
+    		
+
+			
+    	</div>
+		</div>
+     </section>
+
+    <footer class="footer-distributed">
+			
+		
+		</footer>
+		
+ 
+</body>
+
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+  <script type="text/javascript" src="js/scripte.js"></script>
+ 
 </html>
